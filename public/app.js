@@ -156,16 +156,25 @@
         if (Math.hypot(dx, dy) < 1) { dx = -(y2 - y1); dy = x2 - x1; } // opposite seats: bend sideways
         const L = Math.hypot(dx, dy); cx = C + (dx / L) * PULL; cy = C + (dy / L) * PULL;
       }
-      const pull = (x, y) => { const L = Math.hypot(cx - x, cy - y); return [x + ((cx - x) / L) * (r + 5), y + ((cy - y) / L) * (r + 5)]; };
-      const [ax, ay] = pull(x1, y1), [bx, by] = pull(x2, y2);
+      const pull = (x, y, gap) => { const L = Math.hypot(cx - x, cy - y); return [x + ((cx - x) / L) * gap, y + ((cy - y) / L) * gap]; };
+      const [ax, ay] = pull(x1, y1, r + 4), [tx, ty] = pull(x2, y2, r + 3); // t = arrow tip at the receiver
+      // Arrowhead drawn by hand along the curve's end tangent (tip − control) so it takes the payer's colour.
+      const ux = tx - cx, uy = ty - cy, uL = Math.hypot(ux, uy), nx = -uy / uL, ny = ux / uL;
+      const bx = tx - (ux / uL) * 12, by = ty - (uy / uL) * 12; // line stops at the arrowhead's base
+      const head = `M${tx.toFixed(1)} ${ty.toFixed(1)} L${(bx + nx * 8).toFixed(1)} ${(by + ny * 8).toFixed(1)} L${(bx - nx * 8).toFixed(1)} ${(by - ny * 8).toFixed(1)} Z`;
+      const d = `M${ax.toFixed(1)} ${ay.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${bx.toFixed(1)} ${by.toFixed(1)}`;
       // Label at t = 0.3 (payer side): when several threads meet one receiver, midpoints crowd the wrong seats.
       const lx = 0.49 * ax + 0.42 * cx + 0.09 * bx, ly = 0.49 * ay + 0.42 * cy + 0.09 * by;
-      const label = k(t.amount), w = 12 + label.length * 7.4, done = s.done[doneKey(t)];
-      return `<g class="thread${done ? ' done' : ''}">
-        <path d="M${ax.toFixed(1)} ${ay.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${bx.toFixed(1)} ${by.toFixed(1)}" marker-end="url(#arrow)"/>
-        <rect x="${(lx - w / 2).toFixed(1)}" y="${(ly - 11).toFixed(1)}" width="${w.toFixed(1)}" height="22" rx="11" stroke="${colorOf(s, t.from)[0]}"/>
-        <text x="${lx.toFixed(1)}" y="${(ly + 4.5).toFixed(1)}">${label}</text></g>`;
-    }).join('');
+      const label = k(t.amount), w = 12 + label.length * 7.4, done = s.done[doneKey(t)], [col] = colorOf(s, t.from);
+      // Ink casing + payer-coloured core reads on both the lacquer and the light ground; the dots run payer → receiver.
+      return {
+        line: `<g class="thread${done ? ' done' : ''}" style="--c:${col}">
+          <path class="casing" d="${d}"/><path class="core" d="${d}"/><path class="flow" d="${d}"/>
+          <path class="head" d="${head}"/></g>`,
+        label: `<g class="thread-label${done ? ' done' : ''}"><rect x="${(lx - w / 2).toFixed(1)}" y="${(ly - 11).toFixed(1)}" width="${w.toFixed(1)}" height="22" rx="11" stroke="${col}"/>
+          <text x="${lx.toFixed(1)}" y="${(ly + 4.5).toFixed(1)}">${label}</text></g>`,
+      };
+    });
 
     const seats = s.members.map(m => {
       const [x, y] = pos[m.id], [bg, ink] = colorOf(s, m.id);
@@ -174,10 +183,9 @@
     }).join('');
 
     svg.innerHTML = `<desc id="tableDesc">${esc(tableDesc(s, result))}</desc>
-      <defs><marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#fff"/></marker></defs>
       <circle cx="${C}" cy="${C}" r="132" class="table-top"/>
       <circle cx="${C}" cy="${C}" r="118" class="table-inlay"/>
-      ${CAT}${threads}${seats}`;
+      ${CAT}${threads.map(x => x.line).join('')}${seats}${threads.map(x => x.label).join('')}`;
   }
   function tableDesc(s, res) {
     if (!res.transfers.length) return 'Bàn tròn với ' + s.members.length + ' người, không ai cần chuyển tiền.';
@@ -410,15 +418,19 @@
       <b>${esc(x.name)}</b><small>${vnDate(x.date)} · ${x.members.length} người · ${x.expenses.length} món</small></button></li>`).join('');
     $('#delSession').hidden = db.sessions.length < 2;
   }
+  // The name/date fields belong to the session they were loaded from, not to whatever is
+  // current when the sheet closes (switching or deleting changes `cur()` before close fires).
+  let formSessionId = null;
+  function loadFields(s) { formSessionId = s.id; sForm.name.value = s.name; sForm.date.value = s.date; }
   function openSession() {
-    const s = cur();
-    sForm.name.value = s.name; sForm.date.value = s.date;
+    loadFields(cur());
     $('#sessionErr').textContent = '';
     renderSessionSheet();
     sDlg.showModal();
   }
   function commitFields() {
-    const s = cur();
+    const s = db.sessions.find(x => x.id === formSessionId);
+    if (!s) return; // deleted while the sheet was open
     s.name = sForm.name.value.trim() || 'Buổi đi chơi';
     s.date = sForm.date.value || today();
   }
@@ -452,7 +464,7 @@
     // Same friends usually go out again: copy the member list, start with no items.
     const s = newSession(cur().members.map(m => ({ ...m })));
     db.sessions.unshift(s); db.currentId = s.id; save();
-    sForm.name.value = s.name; sForm.date.value = s.date; renderSessionSheet(); sForm.name.select();
+    loadFields(s); renderSessionSheet(); sForm.name.select();
   };
   $('#delSession').onclick = () => {
     const s = cur();

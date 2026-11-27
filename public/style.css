@@ -57,11 +57,20 @@ svg { flex: none; }
 .table-inlay { fill: none; stroke: #ffffff26; stroke-width: 1.5; }
 .seat circle { stroke: var(--ground); stroke-width: 4; }
 .seat text { font-weight: 800; text-anchor: middle; }
-.thread path { fill: none; stroke: #fff; stroke-width: 3.5; stroke-linecap: round; }
-.thread rect { fill: #fff; stroke-width: 2.5; }
-.thread text { font-size: 13px; font-weight: 800; text-anchor: middle; fill: var(--ink); font-variant-numeric: tabular-nums; }
-.thread.done { opacity: .45; }
-.thread.done path { stroke-dasharray: 2 7; }
+.thread path { fill: none; stroke-linecap: round; }
+.thread .casing { stroke: var(--ink); stroke-width: 8.5; }
+.thread .core { stroke: var(--c); stroke-width: 5; }
+.thread .flow { stroke: #fff; stroke-width: 3; stroke-dasharray: 0.1 13; animation: flow 1.2s linear infinite; }
+.thread .head { fill: var(--c); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+@keyframes flow { to { stroke-dashoffset: -13.1; } }
+@media (prefers-reduced-motion: reduce) { .thread .flow { animation: none; } }
+.thread.done { opacity: .4; }
+.thread.done .casing { stroke-width: 5; }
+.thread.done .core { stroke-width: 2.5; stroke-dasharray: 3 6; }
+.thread.done .flow, .thread.done .head { display: none; }
+.thread-label rect { fill: #fff; stroke-width: 2.5; }
+.thread-label text { font-size: 13px; font-weight: 800; text-anchor: middle; fill: var(--ink); font-variant-numeric: tabular-nums; }
+.thread-label.done { opacity: .5; }
 .paw { transform-box: fill-box; transform-origin: 80% 95%; animation: wave 2.6s cubic-bezier(.45,0,.2,1) infinite; }
 @keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 70% { transform: rotate(-16deg); } 80% { transform: rotate(4deg); } 90% { transform: rotate(-12deg); } }
 @media (prefers-reduced-motion: reduce) { .paw { animation: none; } }

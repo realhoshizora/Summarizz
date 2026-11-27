@@ -1,0 +1,11 @@
+{
+  "name": "chia-tien",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chia tiền nhóm sau buổi đi chơi: mỗi món một người trả, chia cho một nhóm con, ít lượt chuyển khoản nhất.",
+  "scripts": {
+    "test": "node --test",
+    "start": "python -m http.server 5173 --directory public"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,482 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-27T04:46:19.816Z",
+  "title": "Design System: Chia tiền · Hội nghị bàn tròn",
+  "extensions": {
+    "colorMeta": {
+      "aluminium-ground": {
+        "role": "neutral",
+        "displayName": "Aluminium Ground",
+        "canonical": "#EEF0F3",
+        "tonalRamp": [
+          "#484849",
+          "#747576",
+          "#ABADAF",
+          "#EEF0F3",
+          "#F3F5F7",
+          "#F7F8FA",
+          "#FBFBFC",
+          "#FDFEFE"
+        ]
+      },
+      "panel-white": {
+        "role": "neutral",
+        "displayName": "Panel White",
+        "canonical": "#FFFFFF"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#15171B",
+        "tonalRamp": [
+          "#111213",
+          "#121315",
+          "#141518",
+          "#15171B",
+          "#5B5D5F",
+          "#969798",
+          "#C5C5C6",
+          "#E8E8E8"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#4C535D",
+        "tonalRamp": [
+          "#1F2123",
+          "#2B2E33",
+          "#3A3F46",
+          "#4C535D",
+          "#82878E",
+          "#AEB2B6",
+          "#D2D4D7",
+          "#EDEEEF"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#D3D8DE",
+        "tonalRamp": [
+          "#414244",
+          "#686A6D",
+          "#999CA0",
+          "#D3D8DE",
+          "#E0E4E8",
+          "#EBEDF0",
+          "#F4F5F7",
+          "#FBFBFC"
+        ]
+      },
+      "control-track": {
+        "role": "neutral",
+        "displayName": "Control Track",
+        "canonical": "#DDE2E7"
+      },
+      "control-hover": {
+        "role": "neutral",
+        "displayName": "Control Hover",
+        "canonical": "#E2E6EA"
+      },
+      "chip-fill": {
+        "role": "neutral",
+        "displayName": "Chip Fill",
+        "canonical": "#E9ECEF"
+      },
+      "lacquer-crimson": {
+        "role": "primary",
+        "displayName": "Lacquer Crimson",
+        "canonical": "#A8162B",
+        "tonalRamp": [
+          "#361217",
+          "#54131C",
+          "#7A1423",
+          "#A8162B",
+          "#C25C6B",
+          "#D896A0",
+          "#E9C5CA",
+          "#F6E8EA"
+        ]
+      },
+      "rim-gold": {
+        "role": "primary",
+        "displayName": "Rim Gold",
+        "canonical": "#D9A928",
+        "tonalRamp": [
+          "#423616",
+          "#6A551B",
+          "#9D7B21",
+          "#D9A928",
+          "#E4C369",
+          "#EED89E",
+          "#F6EAC9",
+          "#FBF6EA"
+        ]
+      },
+      "coin-gold": {
+        "role": "primary",
+        "displayName": "Coin Gold",
+        "canonical": "#F5C518",
+        "tonalRamp": [
+          "#493D12",
+          "#776114",
+          "#B08F16",
+          "#F5C518",
+          "#F8D65D",
+          "#FBE597",
+          "#FDF1C5",
+          "#FEF9E8"
+        ]
+      },
+      "coin-shade": {
+        "role": "primary",
+        "displayName": "Coin Shade",
+        "canonical": "#9A6B00"
+      },
+      "cat-porcelain": {
+        "role": "neutral",
+        "displayName": "Cat Porcelain",
+        "canonical": "#FFFDF7"
+      },
+      "cat-outline": {
+        "role": "neutral",
+        "displayName": "Cat Outline",
+        "canonical": "#2B1D16"
+      },
+      "settled-green": {
+        "role": "tertiary",
+        "displayName": "Settled Green",
+        "canonical": "#0E6E3F",
+        "tonalRamp": [
+          "#10281C",
+          "#0F3A25",
+          "#0F5231",
+          "#0E6E3F",
+          "#569A79",
+          "#93BEA9",
+          "#C3DBCF",
+          "#E7F1EC"
+        ]
+      },
+      "owed-red": {
+        "role": "tertiary",
+        "displayName": "Owed Red",
+        "canonical": "#B4232F",
+        "tonalRamp": [
+          "#391518",
+          "#5A191E",
+          "#831D26",
+          "#B4232F",
+          "#CB656D",
+          "#DD9CA1",
+          "#ECC8CB",
+          "#F8E9EA"
+        ]
+      },
+      "seat-blue": {
+        "role": "secondary",
+        "displayName": "Stool Blue",
+        "canonical": "#1F5FD6",
+        "onColor": "#FFFFFF",
+        "seatIndex": 0
+      },
+      "seat-yellow": {
+        "role": "secondary",
+        "displayName": "Stool Yellow",
+        "canonical": "#F5B700",
+        "onColor": "#1A1408",
+        "seatIndex": 1
+      },
+      "seat-green": {
+        "role": "secondary",
+        "displayName": "Stool Green",
+        "canonical": "#13773C",
+        "onColor": "#FFFFFF",
+        "seatIndex": 2
+      },
+      "seat-raspberry": {
+        "role": "secondary",
+        "displayName": "Stool Raspberry",
+        "canonical": "#D6336C",
+        "onColor": "#FFFFFF",
+        "seatIndex": 3
+      },
+      "seat-orange": {
+        "role": "secondary",
+        "displayName": "Stool Orange",
+        "canonical": "#C8470A",
+        "onColor": "#FFFFFF",
+        "seatIndex": 4
+      },
+      "seat-violet": {
+        "role": "secondary",
+        "displayName": "Stool Violet",
+        "canonical": "#7048E8",
+        "onColor": "#FFFFFF",
+        "seatIndex": 5
+      },
+      "seat-teal": {
+        "role": "secondary",
+        "displayName": "Stool Teal",
+        "canonical": "#0B7285",
+        "onColor": "#FFFFFF",
+        "seatIndex": 6
+      },
+      "seat-lime": {
+        "role": "secondary",
+        "displayName": "Stool Lime",
+        "canonical": "#82C91E",
+        "onColor": "#14200A",
+        "seatIndex": 7
+      },
+      "seat-brown": {
+        "role": "secondary",
+        "displayName": "Stool Brown",
+        "canonical": "#8D5524",
+        "onColor": "#FFFFFF",
+        "seatIndex": 8
+      },
+      "seat-sky": {
+        "role": "secondary",
+        "displayName": "Stool Sky",
+        "canonical": "#4DABF7",
+        "onColor": "#0A1A2A",
+        "seatIndex": 9
+      },
+      "seat-charcoal": {
+        "role": "secondary",
+        "displayName": "Stool Charcoal",
+        "canonical": "#343A40",
+        "onColor": "#FFFFFF",
+        "seatIndex": 10
+      },
+      "seat-pink": {
+        "role": "secondary",
+        "displayName": "Stool Pink",
+        "canonical": "#F783AC",
+        "onColor": "#2A0A16",
+        "seatIndex": 11
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The cat's single sentence above the table; one per screen."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Sheet titles."
+      },
+      "amount": {
+        "displayName": "Amount",
+        "purpose": "Transfer amount on each ticket; always tabular."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Session name in the top bar; item names at 700."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base text, field labels, notes."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase muted section headings and table headers."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ticket-rest",
+        "value": "0 1px 2px #0000000f, 0 4px 14px #0000000a",
+        "purpose": "Transfer tickets resting on the ground."
+      },
+      {
+        "name": "tab-lift",
+        "value": "0 1px 3px #0000001f",
+        "purpose": "Selected tab in the bottom bar."
+      },
+      {
+        "name": "sheet",
+        "value": "0 -8px 40px #0000002e",
+        "purpose": "Bottom sheets and dialogs, over a #15171B80 backdrop."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px #15171B26",
+        "purpose": "Input focus halo with an ink border."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid #15171B; outline-offset: 2px",
+        "purpose": "Global :focus-visible ring."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": "150ms ease-out",
+        "purpose": "Fill and border changes on buttons, chips, the done checkbox."
+      },
+      {
+        "name": "press",
+        "value": "transform 100ms ease-out; scale(.98), mini scale(.97)",
+        "purpose": "Button press."
+      },
+      {
+        "name": "sheet-rise",
+        "value": "240ms cubic-bezier(.2,.8,.2,1), translateY(40px) to 0",
+        "purpose": "Sheet entrance."
+      },
+      {
+        "name": "toast",
+        "value": "200ms ease-out, opacity + translateY(12px)",
+        "purpose": "Toast in and out."
+      },
+      {
+        "name": "number-glide",
+        "value": "450ms, exponential ease-out (1 - 2^(-10p))",
+        "purpose": "Every amount glides from its previous value after a change."
+      },
+      {
+        "name": "paw-wave",
+        "value": "2.6s cubic-bezier(.45,0,.2,1) infinite",
+        "purpose": "The lucky cat's waving paw."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Paw, sheet rise and number glide all stop."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sheet-dialog",
+        "value": "640px"
+      },
+      {
+        "name": "two-column",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one black action per bar or sheet: Thêm món, Lưu, Xong.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg>Thêm món</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid var(--ink, #15171B);border-radius:var(--radius, 14px);background:var(--panel, #FFFFFF);color:var(--ink, #15171B);font:700 16px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);cursor:pointer;white-space:nowrap;transition:background-color .15s ease-out,transform .1s ease-out}.ds-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}.ds-btn-primary{background:var(--ink, #15171B);color:#fff}.ds-btn-primary:hover{background:#2A2E35}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White outlined action: Copy tóm tắt, Gửi link, Huỷ.",
+      "html": "<button class=\"ds-btn\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"8\" y=\"8\" width=\"12\" height=\"12\" rx=\"2\"/><path d=\"M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3\"/></svg>Copy tóm tắt</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid var(--ink, #15171B);border-radius:var(--radius, 14px);background:var(--panel, #FFFFFF);color:var(--ink, #15171B);font:700 16px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);cursor:pointer;white-space:nowrap;transition:background-color .15s ease-out,transform .1s ease-out}.ds-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}.ds-btn:hover{background:#EEF0F3}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Outlined red for deletes in sheets.",
+      "html": "<button class=\"ds-btn ds-btn-danger\">Xoá món</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid var(--ink, #15171B);border-radius:var(--radius, 14px);background:var(--panel, #FFFFFF);color:var(--ink, #15171B);font:700 16px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);cursor:pointer;white-space:nowrap;transition:background-color .15s ease-out,transform .1s ease-out}.ds-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}.ds-btn-danger{border-color:var(--neg, #B4232F);color:var(--neg, #B4232F)}.ds-btn-danger:hover{background:#EEF0F3}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "50px field with muted label above; ink border and halo on focus.",
+      "html": "<label class=\"ds-field\">Số tiền (đ)<input placeholder=\"120.000\" inputmode=\"numeric\"></label>",
+      "css": ".ds-field{display:block;font:700 13px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);color:var(--ink-2, #4C535D)}.ds-field input{display:block;width:100%;box-sizing:border-box;margin-top:6px;min-height:50px;padding:0 14px;font:600 17px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);color:var(--ink, #15171B);border:1.5px solid var(--line, #D3D8DE);border-radius:12px;background:var(--panel, #FFFFFF)}.ds-field input::placeholder{color:#6B727C;font-weight:500}.ds-field input:focus-visible{outline:none;border-color:var(--ink, #15171B);box-shadow:0 0 0 3px #15171B26}"
+    },
+    {
+      "name": "Seat Chip",
+      "kind": "chip",
+      "refersTo": "seat-chip",
+      "description": "Payer and sharer picker; a checked chip fills with the member's stool colour.",
+      "html": "<label class=\"ds-seat\" style=\"--bg:#1F5FD6;--on:#fff\"><input type=\"checkbox\" checked><span>An</span></label> <label class=\"ds-seat\" style=\"--bg:#F5B700;--on:#1A1408\"><input type=\"checkbox\"><span>Bình</span></label>",
+      "css": ".ds-seat{position:relative;cursor:pointer;display:inline-block}.ds-seat input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}.ds-seat span{display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:0 14px 0 10px;border-radius:999px;border:2px solid var(--line, #D3D8DE);color:var(--ink, #15171B);font:700 16px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);background:var(--panel, #FFFFFF);transition:background-color .15s ease-out,border-color .15s ease-out}.ds-seat span::before{content:'';width:14px;height:14px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 1px #0000001a}.ds-seat input:checked+span{background:var(--bg);border-color:var(--bg);color:var(--on)}.ds-seat input:checked+span::before{background:currentColor;box-shadow:none}.ds-seat input:focus-visible+span{outline:3px solid var(--ink, #15171B);outline-offset:2px}"
+    },
+    {
+      "name": "Bottom Bar",
+      "kind": "nav",
+      "refersTo": "tab-track",
+      "description": "Fixed bar: Bàn / Món segmented tabs beside the primary action.",
+      "html": "<nav class=\"ds-bottom\"><div class=\"ds-tabs\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">Bàn</button><button role=\"tab\" aria-selected=\"false\">Món 4</button></div><button class=\"ds-btn ds-btn-primary\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg>Thêm món</button></nav>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid var(--ink, #15171B);border-radius:var(--radius, 14px);background:var(--panel, #FFFFFF);color:var(--ink, #15171B);font:700 16px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);cursor:pointer;white-space:nowrap;transition:background-color .15s ease-out,transform .1s ease-out}.ds-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}.ds-btn-primary{background:var(--ink, #15171B);color:#fff;flex:1;max-width:260px}.ds-btn-primary:hover{background:#2A2E35}.ds-bottom{display:flex;gap:10px;justify-content:center;padding:10px 16px 12px;background:var(--ground, #EEF0F3);border-top:1px solid var(--line, #D3D8DE)}.ds-tabs{display:flex;background:#DDE2E7;border-radius:var(--radius, 14px);padding:4px;flex:1;max-width:260px}.ds-tabs button{flex:1;border:0;background:none;border-radius:10px;font:700 16px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);cursor:pointer;min-height:40px;color:var(--ink-2, #4C535D)}.ds-tabs button[aria-selected=\"true\"]{background:var(--panel, #FFFFFF);color:var(--ink, #15171B);box-shadow:0 1px 3px #0000001f}.ds-tabs button:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}"
+    },
+    {
+      "name": "Transfer Ticket",
+      "kind": "card",
+      "refersTo": "transfer-ticket",
+      "description": "Payment ticket: payer and receiver avatars, amount, and a perforated stub with the done toggle and copy.",
+      "html": "<div class=\"ds-ticket\"><div class=\"ds-top\"><span class=\"ds-party\"><span class=\"ds-av\" style=\"--bg:#1F5FD6;--on:#fff\">A</span><span class=\"ds-nm\">An</span></span><svg class=\"ds-arr\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg><span class=\"ds-party\"><span class=\"ds-av\" style=\"--bg:#F5B700;--on:#1A1408\">B</span><span class=\"ds-nm\">Bình</span></span><span class=\"ds-amt\">125.000đ</span></div><div class=\"ds-foot\"><label class=\"ds-done\"><input type=\"checkbox\">Đã chuyển</label><span style=\"flex:1\"></span><button class=\"ds-mini\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"8\" y=\"8\" width=\"12\" height=\"12\" rx=\"2\"/><path d=\"M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3\"/></svg>Copy</button></div></div>",
+      "css": ".ds-ticket{position:relative;background:var(--panel, #FFFFFF);border-radius:var(--radius, 14px);box-shadow:0 1px 2px #0000000f,0 4px 14px #0000000a;font-family:var(--font, 'Be Vietnam Pro', system-ui, sans-serif);color:var(--ink, #15171B)}.ds-top{display:flex;align-items:center;gap:8px;padding:14px 16px 12px}.ds-party{display:grid;justify-items:center;gap:3px;min-width:44px}.ds-av{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--bg);color:var(--on);font-weight:800;font-size:16px}.ds-nm{font-size:13px;font-weight:700}.ds-arr{width:22px;height:22px;margin-bottom:18px;fill:none;stroke:var(--ink-2, #4C535D);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.ds-amt{margin-left:auto;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}.ds-foot{position:relative;display:flex;align-items:center;gap:4px;padding:6px 8px 8px 6px;border-top:2px dashed var(--line, #D3D8DE)}.ds-foot::before,.ds-foot::after{content:'';position:absolute;top:-9px;width:16px;height:16px;border-radius:50%;background:var(--ground, #EEF0F3)}.ds-foot::before{left:-8px}.ds-foot::after{right:-8px}.ds-done{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 8px;font-size:13px;font-weight:700;cursor:pointer}.ds-done input{appearance:none;margin:0;width:22px;height:22px;border:2px solid var(--ink, #15171B);border-radius:7px;display:grid;place-items:center;background:var(--panel, #FFFFFF);transition:background-color .15s ease-out}.ds-done input:checked{background:var(--pos, #0E6E3F);border-color:var(--pos, #0E6E3F)}.ds-done input:checked::after{content:'';width:10px;height:5px;border:solid #fff;border-width:0 0 3px 3px;transform:translateY(-2px) rotate(-45deg)}.ds-done input:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}.ds-mini{display:inline-flex;align-items:center;gap:5px;min-height:40px;padding:0 9px;border:0;border-radius:10px;background:var(--ground, #EEF0F3);font:700 13px var(--font, 'Be Vietnam Pro', system-ui, sans-serif);color:var(--ink, #15171B);cursor:pointer}.ds-mini:hover{background:#E2E6EA}.ds-mini:active{transform:scale(.97)}.ds-mini:focus-visible{outline:3px solid var(--ink, #15171B);outline-offset:2px}.ds-mini svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Round Table",
+      "kind": "custom",
+      "refersTo": "round-table",
+      "description": "Lacquer table from above: stool-colour seats, white threads with payer-outlined amount labels. Simplified (no cat).",
+      "html": "<svg class=\"ds-table\" viewBox=\"0 0 380 380\" role=\"img\" aria-label=\"Bàn tròn\"><circle cx=\"190\" cy=\"190\" r=\"132\" fill=\"#A8162B\" stroke=\"#D9A928\" stroke-width=\"6\"/><circle cx=\"190\" cy=\"190\" r=\"118\" fill=\"none\" stroke=\"#ffffff26\" stroke-width=\"1.5\"/><path d=\"M190 58 Q300 120 315 165\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><rect x=\"222\" y=\"86\" width=\"64\" height=\"22\" rx=\"11\" fill=\"#fff\" stroke=\"#1F5FD6\" stroke-width=\"2.5\"/><text x=\"254\" y=\"101\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"#15171B\">125k</text><circle cx=\"190\" cy=\"30\" r=\"23\" fill=\"#1F5FD6\" stroke=\"#EEF0F3\" stroke-width=\"4\"/><text x=\"190\" y=\"35\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"#fff\">An</text><circle cx=\"342\" cy=\"180\" r=\"23\" fill=\"#F5B700\" stroke=\"#EEF0F3\" stroke-width=\"4\"/><text x=\"342\" y=\"185\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"#1A1408\">Bình</text></svg>",
+      "css": ".ds-table{display:block;width:100%;max-width:380px;height:auto;font-family:var(--font, 'Be Vietnam Pro', system-ui, sans-serif);font-variant-numeric:tabular-nums}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Round-Table Meeting",
+    "overview": "Settling the bill is a meeting at a round table, seen from directly above and chaired by a white-and-gold mèo thần tài. The table is the hero of the screen: a crimson lacquer disc with a gold rim, members sitting around it as saturated plastic stools, and white threads running from whoever pays to whoever receives, each carrying its amount. Everything else (the transfer tickets, the per-person table, the item list) is the minutes of that meeting, set quietly on cool aluminium.\n\nThe world is loud in exactly three places, the cat's one-line verdict at poster scale, the lacquer table, and the stool colours, and plain everywhere else. Surfaces are white cards on a pale grey ground, type is one family in heavy weights, and controls are large and thumb-sized because the screen is used one-handed at a restaurant table. Money is always set in tabular figures so columns line up and nobody argues about a đồng.",
+    "keyCharacteristics": [
+      "One face (Be Vietnam Pro) from 500 to 900; black weight for the cat's line, heavy 800 for money.",
+      "A cool aluminium ground with white panels; crimson and gold live only on the table and the cat.",
+      "Each member owns one stool colour for the whole session, used on their seat, avatar, chip, dot and thread label.",
+      "Light only (`color-scheme: light`); no dark theme exists.",
+      "Motion is small and functional: a waving paw, a rising sheet, numbers that glide to their new value."
+    ],
+    "rules": [
+      {
+        "name": "The One Stool Rule",
+        "body": "A member's seat colour is their identity. Wherever that person appears (seat, avatar chip, colour dot, selected seat chip, thread label outline) it is the same colour, and no other element may borrow a seat colour for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lacquer Is Furniture Rule",
+        "body": "Crimson and gold belong to the table and the cat. Interface chrome stays ink, white and aluminium; the primary action is black, not red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Money Rule",
+        "body": "Every amount (tickets, thread labels, table cells, totals, previews, counts) is set with tabular figures. No proportional digits next to money.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cat Speaks Once Rule",
+        "body": "Weight 900 at display size is the cat's voice only. It is one sentence, it lives above the table, and nothing else on the screen competes with it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper On Metal Rule",
+        "body": "Only white panels cast shadows, and only soft ambient ones. Grey controls on the aluminium ground stay flat and change fill on hover instead.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give every member one seat colour from the twelve-colour palette and use it in every place that person appears (The One Stool Rule).",
+      "**Do** set every amount in tabular figures at 800 weight.",
+      "**Do** keep the primary action ink black (#15171B fill, white label) and at least 48px tall.",
+      "**Do** keep crimson (#A8162B) and gold (#D9A928) on the table, the cat and the favicon only.",
+      "**Do** let only white panels cast the soft ticket shadow; grey controls change fill on hover.",
+      "**Do** stop the paw, the sheet rise and the number glide under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** turn the table view into a list of cards or a ledger; the table seen from above stays the hero of the first viewport.",
+      "**Don't** use a seat colour for decoration, status, or any element not tied to that member.",
+      "**Don't** set anything but the cat's one sentence at 900 display size.",
+      "**Don't** add a second typeface; Be Vietnam Pro carries every role.",
+      "**Don't** make the primary button crimson or gold."
+    ]
+  }
+}

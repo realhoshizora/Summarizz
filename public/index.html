@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chia tiền · Hội nghị bàn tròn</title>
+<meta name="description" content="Chia tiền sau buổi đi chơi: ai trả món nào, ai chia món nào, và ít lượt chuyển khoản nhất.">
+<meta name="theme-color" content="#EEF0F3">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <button id="sessionBtn" class="session-btn" type="button" aria-haspopup="dialog">
+    <span class="session-name" id="sessionName"></span>
+    <span class="session-meta" id="sessionMeta"></span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+</header>
+
+<main class="wrap">
+  <section id="viewTable" class="view" aria-labelledby="catLine">
+    <p id="catLine" class="cat-line" aria-live="polite"></p>
+    <div class="table-wrap">
+      <svg id="tableSvg" viewBox="0 0 380 380" role="img" aria-labelledby="tableDesc"><desc id="tableDesc"></desc></svg>
+      <button id="inviteBtn" class="btn primary invite" type="button" hidden>Mời người vào bàn</button>
+    </div>
+
+    <div id="settleBlock">
+      <h2 class="h">Chuyển khoản</h2>
+      <ul id="transfers" class="transfers"></ul>
+      <p id="roundNote" class="note"></p>
+      <div class="row-actions">
+        <button id="copySummary" class="btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>
+          Copy tóm tắt
+        </button>
+        <button id="shareLink" class="btn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+          Gửi link
+        </button>
+      </div>
+
+      <h2 class="h">Từng người</h2>
+      <div class="people-scroll">
+        <table class="people">
+          <thead><tr><th scope="col">Người</th><th scope="col">Đã trả</th><th scope="col">Phải chịu</th><th scope="col">Chênh lệch</th></tr></thead>
+          <tbody id="peopleRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="viewItems" class="view" hidden>
+    <p id="itemsTotal" class="items-total"></p>
+    <ul id="items" class="items"></ul>
+  </section>
+</main>
+
+<nav class="bottom" aria-label="Chuyển màn">
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tabTable" aria-controls="viewTable" aria-selected="true" type="button">Bàn</button>
+    <button role="tab" id="tabItems" aria-controls="viewItems" aria-selected="false" type="button">Món <span id="itemCount" class="count"></span></button>
+  </div>
+  <button id="addItem" class="btn primary" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+    Thêm món
+  </button>
+</nav>
+
+<dialog id="itemDlg" class="sheet" aria-labelledby="itemDlgTitle">
+  <form id="itemForm" novalidate>
+    <h2 id="itemDlgTitle" class="sheet-title">Thêm món</h2>
+    <label class="field">Tên món
+      <input name="name" maxlength="60" autocomplete="off" placeholder="Trà tắc" required>
+    </label>
+    <label class="field">Số tiền (đ)
+      <input name="amount" inputmode="numeric" autocomplete="off" placeholder="120.000" required>
+    </label>
+    <fieldset class="field">
+      <legend>Ai trả trước</legend>
+      <div id="payerPick" class="pick"></div>
+    </fieldset>
+    <fieldset class="field">
+      <legend>Ai chia món này</legend>
+      <div class="pick-tools">
+        <button type="button" id="allBtn" class="chip-btn">Cả bàn</button>
+        <button type="button" id="noneBtn" class="chip-btn">Bỏ chọn hết</button>
+      </div>
+      <div id="sharerPick" class="pick"></div>
+      <p id="sharePreview" class="hint" aria-live="polite"></p>
+    </fieldset>
+    <label class="field">Ghi chú <span class="opt">(không bắt buộc)</span>
+      <input name="note" maxlength="120" autocomplete="off" placeholder="3 ly cho An, Bình, Chi">
+    </label>
+    <p id="itemErr" class="err" role="alert"></p>
+    <div class="sheet-actions">
+      <button type="button" id="delItem" class="btn danger">Xoá món</button>
+      <span class="grow"></span>
+      <button type="button" class="btn" data-close>Huỷ</button>
+      <button type="submit" class="btn primary">Lưu</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="sessionDlg" class="sheet" aria-labelledby="sessionDlgTitle">
+  <form id="sessionForm" novalidate>
+    <h2 id="sessionDlgTitle" class="sheet-title">Buổi đi chơi</h2>
+    <label class="field">Tên buổi
+      <input name="name" maxlength="60" autocomplete="off" placeholder="Lẩu bò Đà Lạt">
+    </label>
+    <label class="field">Ngày
+      <input name="date" type="date">
+    </label>
+    <fieldset class="field">
+      <legend>Người tham gia</legend>
+      <ul id="memberList" class="members"></ul>
+      <div class="add-member">
+        <input id="memberInput" maxlength="40" autocomplete="off" placeholder="An, Bình, Chi" aria-label="Thêm người, nhiều tên thì cách nhau bằng dấu phẩy">
+        <button type="button" id="memberAdd" class="btn">Thêm</button>
+      </div>
+    </fieldset>
+    <p id="sessionErr" class="err" role="alert"></p>
+
+    <h3 class="h small">Các buổi đã lưu</h3>
+    <ul id="sessionList" class="sessions"></ul>
+    <div class="sheet-actions">
+      <button type="button" id="newSession" class="btn">Buổi mới</button>
+      <button type="button" id="delSession" class="btn danger">Xoá buổi này</button>
+      <span class="grow"></span>
+      <button type="submit" class="btn primary">Xong</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="split.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

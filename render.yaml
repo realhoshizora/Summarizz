@@ -1,0 +1,11 @@
+services:
+  - type: web
+    runtime: static
+    name: chia-tien
+    # Tests guard the money math: a failing test stops the deploy.
+    buildCommand: npm test
+    staticPublishPath: ./public
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache

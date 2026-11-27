@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "chiatien", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "5173", "--directory", "public"], "port": 5173 }
+  ]
+}

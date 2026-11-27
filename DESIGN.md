@@ -2,19 +2,19 @@
 name: Chia tiền · Hội nghị bàn tròn
 description: Splitting the bill as a round-table meeting chaired by a lucky cat, seen from above.
 colors:
-  aluminium-ground: "#EEF0F3"
+  mai-ground: "#FAD962"
   panel-white: "#FFFFFF"
   ink: "#15171B"
-  ink-muted: "#4C535D"
-  hairline: "#D3D8DE"
-  ink-faint: "#6B727C"
-  control-track: "#DDE2E7"
-  control-hover: "#E2E6EA"
-  chip-fill: "#E9ECEF"
+  ink-muted: "#5B4520"
+  hairline: "#C9A12E"
+  ink-faint: "#7D6A45"
+  control-track: "#EFC443"
+  control-hover: "#F2CB4E"
+  chip-fill: "#FCEFC0"
   lacquer-crimson: "#A8162B"
   rim-gold: "#D9A928"
   settled-green: "#0E6E3F"
-  owed-red: "#B4232F"
+  owed-red: "#9E1B26"
   cat-fur: "#F2B53A"
   cat-cream: "#FFE7B0"
   cat-outline: "#5A3510"
@@ -99,7 +99,7 @@ components:
     padding: "0 18px"
     height: "48px"
   button-mini:
-    backgroundColor: "{colors.aluminium-ground}"
+    backgroundColor: "{colors.mai-ground}"
     textColor: "{colors.ink}"
     rounded: "{rounded.inner}"
     padding: "0 9px"
@@ -149,20 +149,20 @@ components:
 
 **Creative North Star: "The Round-Table Meeting"**
 
-Settling the bill is a meeting at a round table, seen from directly above and chaired by a chubby golden mèo thần tài with folded ears. The table is the hero of the screen: a crimson lacquer disc with a gold rim, members sitting around it as saturated plastic stools, and white threads running from whoever pays to whoever receives, each carrying its amount. Everything else (the transfer tickets, the per-person table, the item list) is the minutes of that meeting, set quietly on cool aluminium.
+Settling the bill is a meeting at a round table, seen from directly above and chaired by a chubby golden mèo thần tài with folded ears. The table is the hero of the screen: a crimson lacquer disc with a gold rim, members sitting around it as saturated plastic stools, and threads in the payer's colour (ink-cased, with dots flowing toward the receiver) running from whoever pays to whoever receives, each carrying its amount. Everything else (the transfer tickets, the per-person table, the item list) is the minutes of that meeting, set on a hoa-mai yellow Tết ground with a few lì xì envelopes tucked into the empty corners.
 
 The world is loud in exactly three places, the cat's one-line verdict at poster scale, the lacquer table, and the stool colours, and plain everywhere else. Surfaces are white cards on a pale grey ground, type is one family in heavy weights, and controls are large and thumb-sized because the screen is used one-handed at a restaurant table. Money is always set in tabular figures so columns line up and nobody argues about a đồng.
 
 **Key Characteristics:**
 - One face (Be Vietnam Pro) from 500 to 900; black weight for the cat's line, heavy 800 for money.
-- A cool aluminium ground with white panels; crimson and gold live only on the table and the cat.
+- A hoa-mai yellow Tết ground with white panels; crimson and gold live on the table, the cat and the lì xì.
 - Each member owns one stool colour for the whole session, used on their seat, avatar, chip, dot and thread label.
 - Light only (`color-scheme: light`); no dark theme exists.
 - Motion is small and functional: a waving paw, a rising sheet, numbers that glide to their new value.
 
 ## Colors
 
-A neutral aluminium room, one ceremonial crimson-and-gold object in the middle, and twelve plastic-stool colours that identify people.
+A Tết room in hoa-mai yellow with a few red lì xì, one ceremonial crimson-and-gold object in the middle, and twelve plastic-stool colours that identify people.
 
 ### Primary
 - **Lacquer Crimson** (lacquer-crimson): the round tabletop and the favicon disc. Also the text caret. Never a button, never a background for text blocks.
@@ -176,7 +176,7 @@ A neutral aluminium room, one ceremonial crimson-and-gold object in the middle, 
 - **Owed Red** (owed-red): negative net balances, danger buttons, invalid fields and error text.
 
 ### Neutral
-- **Aluminium Ground** (aluminium-ground): page, top bar and bottom bar background; also the fill of mini buttons and the perforation notches cut into tickets.
+- **Mai Ground** (mai-ground): page, top bar and bottom bar background, the hoa mai yellow of Tết; also the fill of mini buttons and the perforation notches cut into tickets. Ink reads 13:1 on it, ink-muted 6.5:1.
 - **Panel White** (panel-white): tickets, sheets, inputs, secondary buttons, the selected tab.
 - **Ink** (ink): all primary text, the primary button fill, the toast, focus rings.
 - **Ink Muted** (ink-muted): meta text, section labels, unselected tabs, arrows and chevrons.
@@ -188,7 +188,7 @@ A neutral aluminium room, one ceremonial crimson-and-gold object in the middle, 
 ### Named Rules
 **The One Stool Rule.** A member's seat colour is their identity. Wherever that person appears (seat, avatar chip, colour dot, selected seat chip, thread label outline) it is the same colour, and no other element may borrow a seat colour for decoration.
 
-**The Lacquer Is Furniture Rule.** Crimson and gold belong to the table and the cat. Interface chrome stays ink, white and aluminium; the primary action is black, not red.
+**The Lacquer Is Furniture Rule.** Crimson and gold belong to the table and the cat. Interface chrome stays ink, white and mai yellow; the primary action is black, not red.
 
 ## Typography
 
@@ -230,7 +230,7 @@ Mostly flat, with soft ambient shadows only where a piece of paper sits on the g
 - **Field focus** (`box-shadow: 0 0 0 3px #15171B26`): input focus halo alongside an ink border.
 
 ### Named Rules
-**The Paper On Metal Rule.** Only white panels cast shadows, and only soft ambient ones. Grey controls on the aluminium ground stay flat and change fill on hover instead.
+**The Paper On Metal Rule.** Only white panels cast shadows, and only soft ambient ones. Yellow controls on the mai ground stay flat and change fill on hover instead.
 
 ## Shapes
 
@@ -245,7 +245,7 @@ Tactile, heavy-labelled, and always at least 48px tall.
 - **Secondary:** white fill, ink outline; hover #F6F7F9.
 - **Danger:** white fill, owed-red outline and label, for deletes.
 - **Press:** scales to 0.98 over 0.1s; fills transition over 0.15s ease-out.
-- **Mini:** borderless 40px aluminium pill-rectangle (10px) with a 16px stroke icon, used for per-ticket copy actions; presses to 0.97.
+- **Mini:** borderless 44px mai-yellow pill-rectangle (10px) with a 16px stroke icon, used for per-ticket copy actions; presses to 0.97.
 
 ### Chips
 - **Seat chip:** a 42px pill with a 2px hairline border and a 14px dot in the member's colour. Checked, the whole chip fills with the member's colour and its on-colour text. Used for payer and sharer pickers.
@@ -254,7 +254,7 @@ Tactile, heavy-labelled, and always at least 48px tall.
 
 ### Cards / Containers
 - **Corner Style:** 14px.
-- **Background:** panel white on the aluminium ground.
+- **Background:** panel white on the mai ground.
 - **Shadow Strategy:** ticket rest (see Elevation).
 - **Internal Padding:** 14px 16px 12px on the ticket top, 6px 8px 8px on its stub.
 

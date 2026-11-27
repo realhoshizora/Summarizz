@@ -1,17 +1,17 @@
 :root {
-  --ground: #EEF0F3;      /* tube-lit aluminium */
+  --ground: #FAD962;      /* hoa mai yellow: the Tết ground the red table and lì xì sit on */
   --panel: #FFFFFF;
   --ink: #15171B;
-  --ink-2: #4C535D;
-  --line: #D3D8DE;
-  --ink-faint: #6B727C;   /* placeholders, settled tickets */
-  --control-track: #DDE2E7;
-  --control-hover: #E2E6EA;
-  --chip: #E9ECEF;
+  --ink-2: #5B4520;       /* warm brown: 6.5:1 on the ground, 9:1 on white */
+  --line: #C9A12E;
+  --ink-faint: #7D6A45;   /* placeholders, settled tickets (on white only) */
+  --control-track: #EFC443;
+  --control-hover: #F2CB4E;
+  --chip: #FCEFC0;
   --lacquer: #A8162B;     /* the round table */
   --gold: #D9A928;
   --pos: #0E6E3F;
-  --neg: #B4232F;
+  --neg: #9E1B26;
   --radius: 14px;
   --font: 'Be Vietnam Pro', system-ui, sans-serif;
   color-scheme: light;
@@ -23,7 +23,7 @@ body {
   font: 500 16px/1.45 var(--font);
   padding-bottom: calc(92px + env(safe-area-inset-bottom));
 }
-::selection { background: #F5C51866; }
+::selection { background: #A8162B40; }
 button, input { font: inherit; color: inherit; }
 input { caret-color: var(--lacquer); }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 7px; }
@@ -42,7 +42,7 @@ svg { flex: none; }
 .session-meta { grid-row: 2; font-size: 13px; color: var(--ink-2); font-weight: 600; }
 .chev { grid-row: 1 / 3; grid-column: 2; align-self: center; width: 22px; height: 22px; fill: none; stroke: var(--ink-2); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 
-.wrap { max-width: 560px; margin: 0 auto; padding: 0 20px; }
+.wrap { max-width: 560px; margin: 0 auto; padding: 0 20px; overflow-x: clip; }
 
 /* ---------- the cat's line, poster scale ---------- */
 .cat-line {
@@ -55,7 +55,7 @@ svg { flex: none; }
 #tableSvg { display: block; width: 100%; height: auto; font-family: var(--font); }
 .table-top { fill: var(--lacquer); stroke: var(--gold); stroke-width: 6; }
 .table-inlay { fill: none; stroke: #ffffff26; stroke-width: 1.5; }
-.seat circle { stroke: var(--ground); stroke-width: 4; }
+.seat circle { stroke: var(--ink); stroke-width: 2.5; }
 .seat text { font-weight: 800; text-anchor: middle; }
 .thread path { fill: none; stroke-linecap: round; }
 .thread .casing { stroke: var(--ink); stroke-width: 8.5; }
@@ -79,7 +79,7 @@ svg { flex: none; }
 /* ---------- headings & lists ---------- */
 .h { font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); margin: 28px 0 6px; }
 .h.small { margin-top: 22px; }
-.dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; flex: none; vertical-align: -1px; }
+.dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; flex: none; vertical-align: -1px; box-shadow: 0 0 0 1.5px var(--ink); }
 
 .transfers, .items, .members, .sessions { list-style: none; margin: 0; padding: 0; }
 .transfers { display: grid; gap: 12px; }
@@ -235,12 +235,48 @@ input::placeholder { color: var(--ink-faint); font-weight: 500; }
 @media (min-width: 1024px) {
   .wrap { max-width: 1080px; }
   .session-btn { max-width: calc(1080px - 24px); }
-  #viewTable:not([hidden]):has(#settleBlock:not([hidden])) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 56px; align-items: start; }
-  #viewTable > .table-wrap { position: sticky; top: 70px; }
-  #viewTable > .cat-line, #viewTable > .table-wrap { grid-column: 1; }
-  #settleBlock { grid-column: 2; grid-row: 1 / span 2; }
+  /* table, then the per-person summary under it on the left; transfer tickets on the right */
+  #viewTable:not([hidden]):has(#settleBlock:not([hidden])) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: 56px; align-items: start; }
+  #viewTable > .cat-line, #viewTable > .table-wrap, #peopleBlock { grid-column: 1; }
+  #settleBlock { grid-column: 2; grid-row: 1 / span 3; }
   #settleBlock > .h:first-child { margin-top: 18px; }
   #viewItems { max-width: 640px; margin: 0 auto; }
   #viewTable .table-wrap { width: 100%; max-width: 520px; margin-inline: auto; }
   #viewTable:not(:has(#settleBlock:not([hidden]))) .cat-line { text-align: center; }
+}
+
+/* Tết: hoa mai on the left, hoa đào on the right. On phones they grow in from the edges
+   behind the table; once the screen has empty sides they move out to the margins. */
+.cat-line { position: relative; z-index: 2; }
+#tableSvg { position: relative; z-index: 1; overflow: visible; }
+.branch { position: absolute; z-index: 0; width: 46%; height: auto; pointer-events: none; user-select: none; }
+.branch.mai { left: -34px; top: 40%; }
+.branch.dao { right: -34px; top: -24%; }
+/* Wide screens: each empty margin becomes a column of Tết things, top to bottom:
+   a blossom branch growing in from the screen edge, one half of a câu đối pair, and on the floor
+   a pot of bánh chưng (left) or a khay mứt (right). Everything scales with the margin and the height. */
+.tet-side { display: none; }
+@media (min-width: 1280px) {
+  .branch { display: none; }
+  .tet-side {
+    position: fixed; top: 0; bottom: 86px; z-index: 0; width: calc(50vw - 540px);
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 64px 0 12px; pointer-events: none; user-select: none;
+  }
+  .tet-side.left { left: 0; }
+  .tet-side.right { right: 0; }
+  .tet-side img { display: block; max-width: 100%; height: auto; min-height: 0; object-fit: contain; }
+  .tet-branch { max-height: 30vh; width: min(300px, 100%); }
+  .tet-side.left .tet-branch { align-self: flex-start; }
+  .tet-side.right .tet-branch { align-self: flex-end; }
+  .tet-floor { width: min(300px, calc(100% - 16px)); max-height: 34vh; }
+  .cau-doi {
+    position: relative; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;
+    width: clamp(72px, 44%, 100px); height: min(30vh, 290px); padding: 14px 10px; background: var(--lacquer);
+    border: 2px solid var(--ink); box-shadow: inset 0 0 0 4px var(--lacquer), inset 0 0 0 6px var(--gold), 0 6px 14px #0000001f;
+    color: #F5C518; font-weight: 900; font-size: clamp(13px, 1vw, 17px); line-height: 1; letter-spacing: -0.01em;
+  }
+  .cau-doi::before, .cau-doi::after { content: ''; position: absolute; left: -9px; right: -9px; height: 9px; border-radius: 7px; background: #5A3510; border: 2px solid var(--ink); }
+  .cau-doi::before { top: -9px; }
+  .cau-doi::after { bottom: -9px; }
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chia tiền · Hội nghị bàn tròn</title>
 <meta name="description" content="Chia tiền sau buổi đi chơi: ai trả món nào, ai chia món nào, và ít lượt chuyển khoản nhất.">
-<meta name="theme-color" content="#EEF0F3">
+<meta name="theme-color" content="#FAD962">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,8 @@
   <section id="viewTable" class="view" aria-labelledby="catLine">
     <p id="catLine" class="cat-line" aria-live="polite"></p>
     <div class="table-wrap">
+      <img class="branch mai" src="mai.svg" alt="" aria-hidden="true">
+      <img class="branch dao" src="dao.svg" alt="" aria-hidden="true">
       <svg id="tableSvg" viewBox="0 0 380 380" role="img" aria-labelledby="tableDesc"><desc id="tableDesc"></desc></svg>
       <button id="inviteBtn" class="btn primary invite" type="button" hidden>Mời người vào bàn</button>
     </div>
@@ -44,6 +46,9 @@
         </button>
       </div>
 
+    </div>
+
+    <div id="peopleBlock">
       <h2 class="h">Từng người</h2>
       <div class="people-scroll">
         <table class="people">
@@ -137,6 +142,16 @@
 </dialog>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<aside class="tet-side left" aria-hidden="true">
+  <img class="tet-branch" src="mai.svg" alt="">
+  <div class="cau-doi"><span>Phúc</span><span>Lộc</span><span>Đầy</span><span>Nhà</span></div>
+  <img class="tet-floor" src="banh-chung.svg" alt="">
+</aside>
+<aside class="tet-side right" aria-hidden="true">
+  <img class="tet-branch" src="dao.svg" alt="">
+  <div class="cau-doi"><span>An</span><span>Khang</span><span>Thịnh</span><span>Vượng</span></div>
+  <img class="tet-floor" src="khay-mut.svg" alt="">
+</aside>
 
 <script src="split.js"></script>
 <script src="app.js"></script>

@@ -14,7 +14,7 @@
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const uid = () => Math.random().toString(36).slice(2, 9);
   const today = () => new Date().toISOString().slice(0, 10);
-  const short = name => { const w = name.trim().split(/\s+/).pop(); return w.length > 5 ? w.slice(0, 4) + '…' : w; };
+  const short = name => { const w = name.trim().split(/\s+/).pop(); return w.length > 7 ? w.slice(0, 6) + '…' : w; };
   const vnDate = d => d ? d.split('-').reverse().join('/') : '';
   const k = n => (n / 1000).toLocaleString('vi-VN') + 'k';
   const initial = name => name.trim().split(/\s+/).pop().charAt(0).toUpperCase();
@@ -136,10 +136,36 @@
     <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
   </g>`;
 
-  const C = 190, SEAT_RING = 160, PULL = 140;
+  // Lì xì tucked into the empty corners around the round table (drawn under seats and threads).
+  const LIXI = word => `<g class="lixi">
+    <rect x="-20" y="-28" width="40" height="56" rx="4" fill="#D7262E" stroke="#7A0F18" stroke-width="1.5"/>
+    <path d="M-20 -24 Q0 -2 20 -24 V-28 H-20 Z" fill="#B51C24"/>
+    <path d="M-19 -23 Q0 -2 19 -23" fill="none" stroke="#F5C518" stroke-width="1.6"/>
+    <circle cx="0" cy="6" r="10.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1"/>
+    <text x="0" y="9.6" font-size="9.5" font-weight="900" text-anchor="middle" fill="#9E1B26">${word}</text>
+    <path d="M-13 22 H13" stroke="#F5C518" stroke-width="1.2" stroke-dasharray="2 2.5"/></g>`;
+  // Lì xì dropped between the seats, half under the table or past the frame's edge. Positions are
+  // random per session but seeded by its id, so they stay put while you edit that session.
+  function envelopes(id, n) {
+    let h = 2166136261;
+    for (const ch of id) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+    const rnd = () => { h = Math.imul(h ^ (h >>> 15), 2246822507) ^ Math.imul(h ^ (h >>> 13), 3266489909); return ((h ^= h >>> 16) >>> 0) / 4294967296; };
+    const gaps = Math.max(n, 6), picked = new Set(), out = [];
+    const count = 4 + Math.floor(rnd() * 2), WORDS = ['Tài', 'Lộc', 'Phúc', 'Thọ'];
+    while (picked.size < Math.min(count, gaps)) picked.add(Math.floor(rnd() * gaps));
+    for (const g of picked) {
+      const a = -Math.PI / 2 + (2 * Math.PI * (g + 0.5 + (rnd() - 0.5) * 0.4)) / gaps, d = 172 + rnd() * 34;
+      // Sideways they may run off the screen edge; vertically they stay inside the table's frame.
+      const x = C + d * Math.cos(a), y = Math.min(354, Math.max(26, C + d * Math.sin(a))), rot = (rnd() - 0.5) * 80, k = 0.8 + rnd() * 0.3;
+      out.push(`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(0)}) scale(${k.toFixed(2)})">${LIXI(WORDS[Math.floor(rnd() * WORDS.length)])}</g>`);
+    }
+    return out.join('');
+  }
+
+  const C = 190, SEAT_RING = 158, PULL = 140;
   function drawTable(s, result) {
     const svg = $('#tableSvg'), n = s.members.length;
-    const r = Math.min(23, (Math.PI * SEAT_RING) / Math.max(n, 1) - 4);
+    const r = Math.min(29, (Math.PI * SEAT_RING) / Math.max(n, 1) - 4);
     const pos = {};
     s.members.forEach((m, i) => {
       const a = -Math.PI / 2 + (2 * Math.PI * i) / n;
@@ -179,13 +205,19 @@
     const seats = s.members.map(m => {
       const [x, y] = pos[m.id], [bg, ink] = colorOf(s, m.id);
       return `<g class="seat"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${bg}"/>
-        <text x="${x.toFixed(1)}" y="${(y + 4.5).toFixed(1)}" fill="${ink}" font-size="${r < 18 ? 10 : 13}">${esc(short(m.name))}</text></g>`;
+        <text x="${x.toFixed(1)}" y="${y.toFixed(1)}" dy=".36em" fill="${ink}" font-size="15">${esc(short(m.name))}</text></g>`;
     }).join('');
 
     svg.innerHTML = `<desc id="tableDesc">${esc(tableDesc(s, result))}</desc>
+      ${envelopes(s.id, n)}
       <circle cx="${C}" cy="${C}" r="132" class="table-top"/>
       <circle cx="${C}" cy="${C}" r="118" class="table-inlay"/>
       ${CAT}${threads.map(x => x.line).join('')}${seats}${threads.map(x => x.label).join('')}`;
+    // Shrink a name until it clears the seat's edge by 5px on each side.
+    svg.querySelectorAll('.seat text').forEach(t => {
+      const max = 2 * r - 10, w = t.getComputedTextLength();
+      if (w > max) t.setAttribute('font-size', (15 * max / w).toFixed(1));
+    });
   }
   function tableDesc(s, res) {
     if (!res.transfers.length) return 'Bàn tròn với ' + s.members.length + ' người, không ai cần chuyển tiền.';
@@ -233,7 +265,7 @@
     $('#sessionMeta').textContent = [vnDate(s.date), s.members.length + ' người'].join(' · ');
     $('#catLine').textContent = catSays(s, res);
     $('#inviteBtn').hidden = s.members.length >= 2;
-    $('#settleBlock').hidden = !s.expenses.length;
+    $('#settleBlock').hidden = $('#peopleBlock').hidden = !s.expenses.length;
     drawTable(s, res);
 
     $('#transfers').innerHTML = res.transfers.map(t => {
@@ -481,4 +513,5 @@
   importFromHash();
   window.addEventListener('hashchange', () => { importFromHash(); render(); });
   render();
+  document.fonts.ready.then(render); // re-fit seat names once Be Vietnam Pro has loaded
 })();

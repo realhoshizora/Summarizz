@@ -73,9 +73,12 @@ svg { flex: none; }
 .thread-label rect { fill: #fff; stroke-width: 2.5; }
 .thread-label text { font-size: 13px; font-weight: 800; text-anchor: middle; fill: var(--ink); font-variant-numeric: tabular-nums; }
 .thread-label.done { opacity: .5; }
-.paw { transform-box: fill-box; transform-origin: 80% 95%; animation: wave 2.6s cubic-bezier(.45,0,.2,1) infinite; }
-@keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 70% { transform: rotate(-16deg); } 80% { transform: rotate(4deg); } 90% { transform: rotate(-12deg); } }
-@media (prefers-reduced-motion: reduce) { .paw { animation: none; } }
+/* beckon: the arm leans toward the viewer while the hand folds at the wrist, back and forth without rest */
+.paw { transform-box: fill-box; transform-origin: 50% 100%; animation: lean .7s ease-in-out infinite alternate; }
+.paw .hand { transform-box: fill-box; transform-origin: 50% 100%; animation: fold .7s ease-in-out infinite alternate; }
+@keyframes lean { to { transform: scaleY(.9); } }
+@keyframes fold { to { transform: scaleY(.5); } }
+@media (prefers-reduced-motion: reduce) { .paw, .paw .hand { animation: none; } }
 .invite { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
 
 /* ---------- headings & lists ---------- */

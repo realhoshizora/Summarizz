@@ -101,11 +101,6 @@
     <path d="M-60 60 Q-62 49 -50 48 L50 48 Q62 49 60 60 Q62 71 50 72 L-50 72 Q-62 71 -60 60 Z" fill="#C81E2B" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
     <path d="M-52 54 Q0 58 52 54 M-52 66 Q0 70 52 66" fill="none" stroke="#F5C518" stroke-width="3.5" stroke-linecap="round"/>
     <circle cx="-60" cy="70" r="4.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.2"/><circle cx="60" cy="70" r="4.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.2"/>
-    <g class="paw">
-      <path d="M-34 6 C-50 -2 -56 -22 -54 -36 C-52 -50 -34 -50 -34 -37 C-34 -24 -28 -12 -20 -4 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
-      <ellipse cx="-44" cy="-40" rx="7" ry="6" fill="#FFE7B0"/>
-      <ellipse cx="-44" cy="-39" rx="3.2" ry="2.6" fill="#F59AAE"/>
-    </g>
     <path d="M-50 52 C-62 18 -48 -8 0 -8 C48 -8 62 18 50 52 Q0 62 -50 52 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
     <ellipse cx="0" cy="30" rx="30" ry="22" fill="#FFE7B0"/>
     <path d="M-42 20 q6 3 10 0 M42 20 q-6 3 -10 0 M-45 32 q6 3 10 0 M45 32 q-6 3 -10 0" fill="none" stroke="#D98E26" stroke-width="2.2" stroke-linecap="round"/>
@@ -132,6 +127,16 @@
       <path d="M-20 -14 L-36 -16 M-20 -10 L-35 -8 M20 -14 L36 -16 M20 -10 L35 -8" stroke-width="1.4"/>
     </g>
     <path d="M-3.5 -20 Q0 -22 3.5 -20 Q2 -16 0 -16 Q-2 -16 -3.5 -20 Z" fill="#E86A88"/>
+    <g class="paw">
+      <path d="M-53 24 C-62 4 -68 -14 -66 -32 L-44 -32 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -32 M-44 -32 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
+      <g class="hand">
+        <ellipse cx="-55" cy="-40" rx="15" ry="15" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5"/>
+        <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
+        <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
+        <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+      </g>
+    </g>
     <rect x="-30" y="78" width="60" height="17" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
     <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
   </g>`;

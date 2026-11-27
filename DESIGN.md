@@ -158,7 +158,7 @@ The world is loud in exactly three places, the cat's one-line verdict at poster 
 - A hoa-mai yellow Tết ground with white panels; crimson and gold live on the table, the cat and the lì xì.
 - Each member owns one stool colour for the whole session, used on their seat, avatar, chip, dot and thread label.
 - Light only (`color-scheme: light`); no dark theme exists.
-- Motion is small and functional: a waving paw, a rising sheet, numbers that glide to their new value.
+- Motion is small and functional: a beckoning paw, a rising sheet, numbers that glide to their new value.
 
 ## Colors
 
@@ -271,7 +271,7 @@ Tactile, heavy-labelled, and always at least 48px tall.
 The full-width SVG table: lacquer disc with gold rim and a faint white inlay ring, seats as stool-colour circles with a 4px ground-colour ring and an 800 short name, and white 3.5px threads with arrowheads. Each thread carries a white pill label (22px tall, 11px radius) outlined 2.5px in the payer's colour, with the amount in 800 13px tabular ink. A done transfer drops to 45% opacity with a dotted thread.
 
 ### Lucky Cat (signature)
-A chubby golden maneki-neko with folded ears at the table's centre, drawn only in curves with a 2.5px warm-brown line: tabby stripes on the forehead, closed smiling eyes under thick brows, a gold ₫ coin, a red collar with a gold bell, sitting on a red cushion behind a wooden "Chủ toạ" block. Its raised paw waves every 2.6s (cubic-bezier(.45,0,.2,1)); the wave stops under reduced motion. The favicon is the cat's head on a crimson disc.
+A chubby golden maneki-neko with folded ears at the table's centre, drawn only in curves with a 2.5px warm-brown line: tabby stripes on the forehead, closed smiling eyes under thick brows, a gold ₫ coin, a red collar with a gold bell, sitting on a red cushion behind a wooden "Chủ toạ" block. Its raised left paw grows out of the side of the body (the arm has no line where it meets the body) and sits beside the face, pink beans facing out; it beckons back and forth without rest, 0.7s each way (the arm shortens to 90% from the shoulder while the hand folds at the wrist to 50% height); the beckon stops under reduced motion. The favicon is the cat's head on a crimson disc.
 
 ### Transfer Ticket (signature)
 A payment ticket per transfer: payer avatar and name, a muted arrow, receiver avatar and name, and the amount right-aligned at Amount scale. Below a perforated stub sits a 44px "done" toggle (22px ink-outlined checkbox that fills settled-green when checked) and mini copy buttons. A done ticket drops to 62% opacity with the amount struck through.

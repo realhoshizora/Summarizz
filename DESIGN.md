@@ -15,8 +15,9 @@ colors:
   rim-gold: "#D9A928"
   settled-green: "#0E6E3F"
   owed-red: "#B4232F"
-  cat-porcelain: "#FFFDF7"
-  cat-outline: "#2B1D16"
+  cat-fur: "#F2B53A"
+  cat-cream: "#FFE7B0"
+  cat-outline: "#5A3510"
   coin-gold: "#F5C518"
   coin-shade: "#9A6B00"
   seat-blue: "#1F5FD6"
@@ -148,7 +149,7 @@ components:
 
 **Creative North Star: "The Round-Table Meeting"**
 
-Settling the bill is a meeting at a round table, seen from directly above and chaired by a white-and-gold mèo thần tài. The table is the hero of the screen: a crimson lacquer disc with a gold rim, members sitting around it as saturated plastic stools, and white threads running from whoever pays to whoever receives, each carrying its amount. Everything else (the transfer tickets, the per-person table, the item list) is the minutes of that meeting, set quietly on cool aluminium.
+Settling the bill is a meeting at a round table, seen from directly above and chaired by a chubby golden mèo thần tài with folded ears. The table is the hero of the screen: a crimson lacquer disc with a gold rim, members sitting around it as saturated plastic stools, and white threads running from whoever pays to whoever receives, each carrying its amount. Everything else (the transfer tickets, the per-person table, the item list) is the minutes of that meeting, set quietly on cool aluminium.
 
 The world is loud in exactly three places, the cat's one-line verdict at poster scale, the lacquer table, and the stool colours, and plain everywhere else. Surfaces are white cards on a pale grey ground, type is one family in heavy weights, and controls are large and thumb-sized because the screen is used one-handed at a restaurant table. Money is always set in tabular figures so columns line up and nobody argues about a đồng.
 
@@ -182,7 +183,7 @@ A neutral aluminium room, one ceremonial crimson-and-gold object in the middle, 
 - **Ink Faint** (ink-faint): input placeholders and the struck-through amount on a settled ticket (4.8:1 on white).
 - **Hairline** (hairline): row dividers, input borders, the dashed ticket perforation, the bottom bar edge.
 - **Control Track / Control Hover / Chip Fill** (control-track, control-hover, chip-fill): the tab track, hover fills on grey controls, and quiet pill buttons.
-- **Cat Porcelain / Cat Outline** (cat-porcelain, cat-outline): the lucky cat's body and its 2.5px brown-black line.
+- **Cat Fur / Cat Cream / Cat Outline** (cat-fur, cat-cream, cat-outline): the lucky cat's golden fur, its cream muzzle, belly and paws, and its 2.5px warm-brown line.
 
 ### Named Rules
 **The One Stool Rule.** A member's seat colour is their identity. Wherever that person appears (seat, avatar chip, colour dot, selected seat chip, thread label outline) it is the same colour, and no other element may borrow a seat colour for decoration.
@@ -270,7 +271,7 @@ Tactile, heavy-labelled, and always at least 48px tall.
 The full-width SVG table: lacquer disc with gold rim and a faint white inlay ring, seats as stool-colour circles with a 4px ground-colour ring and an 800 short name, and white 3.5px threads with arrowheads. Each thread carries a white pill label (22px tall, 11px radius) outlined 2.5px in the payer's colour, with the amount in 800 13px tabular ink. A done transfer drops to 45% opacity with a dotted thread.
 
 ### Lucky Cat (signature)
-A white-and-gold maneki-neko at the table's centre, drawn in porcelain with a 2.5px brown-black line, a gold ₫ coin, a red collar with a gold bell, and a gold "Chủ toạ" plaque. Its raised paw waves every 2.6s (cubic-bezier(.45,0,.2,1)); the wave stops under reduced motion. The favicon is the cat's head on a crimson disc.
+A chubby golden maneki-neko with folded ears at the table's centre, drawn only in curves with a 2.5px warm-brown line: tabby stripes on the forehead, closed smiling eyes under thick brows, a gold ₫ coin, a red collar with a gold bell, sitting on a red cushion behind a wooden "Chủ toạ" block. Its raised paw waves every 2.6s (cubic-bezier(.45,0,.2,1)); the wave stops under reduced motion. The favicon is the cat's head on a crimson disc.
 
 ### Transfer Ticket (signature)
 A payment ticket per transfer: payer avatar and name, a muted arrow, receiver avatar and name, and the amount right-aligned at Amount scale. Below a perforated stub sits a 44px "done" toggle (22px ink-outlined checkbox that fills settled-green when checked) and mini copy buttons. A done ticket drops to 62% opacity with the amount struck through.

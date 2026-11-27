@@ -232,6 +232,6 @@ input::placeholder { color: var(--ink-faint); font-weight: 500; }
   #settleBlock { grid-column: 2; grid-row: 1 / span 2; }
   #settleBlock > .h:first-child { margin-top: 18px; }
   #viewItems { max-width: 640px; margin: 0 auto; }
-  #viewTable .table-wrap { max-width: 520px; margin-inline: auto; }
+  #viewTable .table-wrap { width: 100%; max-width: 520px; margin-inline: auto; }
   #viewTable:not(:has(#settleBlock:not([hidden]))) .cat-line { text-align: center; }
 }

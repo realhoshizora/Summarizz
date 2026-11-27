@@ -96,37 +96,44 @@
 
   /* ---------- the round table ---------- */
   const CAT = `
-  <g class="cat" transform="translate(190 182)">
-    <ellipse cx="0" cy="58" rx="44" ry="8" fill="#000" opacity=".22"/>
+  <g class="cat" transform="translate(190 176) scale(.92)">
+    <ellipse cx="0" cy="74" rx="60" ry="9" fill="#000" opacity=".22"/>
+    <path d="M-60 60 Q-62 49 -50 48 L50 48 Q62 49 60 60 Q62 71 50 72 L-50 72 Q-62 71 -60 60 Z" fill="#C81E2B" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M-52 54 Q0 58 52 54 M-52 66 Q0 70 52 66" fill="none" stroke="#F5C518" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="-60" cy="70" r="4.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.2"/><circle cx="60" cy="70" r="4.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.2"/>
     <g class="paw">
-      <path d="M-22 10 Q-42 2 -46 -22 Q-48 -38 -39 -40 Q-30 -42 -30 -30 Q-30 -12 -12 4 Z" fill="#FFFDF7" stroke="#2B1D16" stroke-width="2.5" stroke-linejoin="round"/>
-      <ellipse cx="-39" cy="-31" rx="4.5" ry="3.5" fill="#F4A7B9"/>
+      <path d="M-34 6 C-50 -2 -56 -22 -54 -36 C-52 -50 -34 -50 -34 -37 C-34 -24 -28 -12 -20 -4 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
+      <ellipse cx="-44" cy="-40" rx="7" ry="6" fill="#FFE7B0"/>
+      <ellipse cx="-44" cy="-39" rx="3.2" ry="2.6" fill="#F59AAE"/>
     </g>
-    <path d="M-35 54 C-42 22 -30 2 0 2 C30 2 42 22 35 54 Z" fill="#FFFDF7" stroke="#2B1D16" stroke-width="2.5" stroke-linejoin="round"/>
-    <ellipse cx="0" cy="34" rx="16" ry="19" fill="#F5C518" stroke="#9A6B00" stroke-width="2"/>
-    <ellipse cx="0" cy="34" rx="11" ry="14" fill="none" stroke="#9A6B00" stroke-width="1.2"/>
-    <text x="0" y="40" text-anchor="middle" font-size="17" font-weight="900" fill="#7A5200">₫</text>
-    <ellipse cx="15" cy="44" rx="9" ry="7" fill="#FFFDF7" stroke="#2B1D16" stroke-width="2"/>
-    <path d="M-27 6 Q0 18 27 6 L27 12 Q0 24 -27 12 Z" fill="#D7262E" stroke="#2B1D16" stroke-width="1.5"/>
-    <circle cx="0" cy="17" r="5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.5"/>
-    <path d="M-28 -30 L-24 -58 L-5 -44 Z M28 -30 L24 -58 L5 -44 Z" fill="#FFFDF7" stroke="#2B1D16" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M-23 -37 L-21 -51 L-11 -44 Z M23 -37 L21 -51 L11 -44 Z" fill="#F4A7B9"/>
-    <clipPath id="catHead"><ellipse cx="0" cy="-22" rx="32" ry="26"/></clipPath>
-    <ellipse cx="0" cy="-22" rx="32" ry="26" fill="#FFFDF7"/>
-    <g clip-path="url(#catHead)">
-      <ellipse cx="18" cy="-42" rx="15" ry="10" fill="#F08C2E"/>
-      <ellipse cx="-20" cy="-44" rx="9" ry="6" fill="#2B1D16"/>
+    <path d="M-50 52 C-62 18 -48 -8 0 -8 C48 -8 62 18 50 52 Q0 62 -50 52 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="30" rx="30" ry="22" fill="#FFE7B0"/>
+    <path d="M-42 20 q6 3 10 0 M42 20 q-6 3 -10 0 M-45 32 q6 3 10 0 M45 32 q-6 3 -10 0" fill="none" stroke="#D98E26" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="27" cy="25" rx="15" ry="20" fill="#F5C518" stroke="#9A6B00" stroke-width="2"/>
+    <ellipse cx="27" cy="25" rx="10.5" ry="15" fill="none" stroke="#9A6B00" stroke-width="1.2"/>
+    <text x="27" y="31" text-anchor="middle" font-size="16" font-weight="900" fill="#7A5200">₫</text>
+    <ellipse cx="31" cy="40" rx="11" ry="8.5" fill="#F2B53A" stroke="#5A3510" stroke-width="2.2"/>
+    <ellipse cx="-24" cy="53" rx="14" ry="8" fill="#FFE7B0" stroke="#5A3510" stroke-width="2.2"/>
+    <ellipse cx="24" cy="53" rx="14" ry="8" fill="#FFE7B0" stroke="#5A3510" stroke-width="2.2"/>
+    <path d="M-33 56 q4.5 -5 9 0 q4.5 -5 9 0 M15 56 q4.5 -5 9 0 q4.5 -5 9 0" fill="none" stroke="#5A3510" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M-36 -3 Q0 14 36 -3 L36 5 Q0 22 -36 5 Z" fill="#D7262E" stroke="#5A3510" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="0" cy="15" r="6.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.6"/>
+    <path d="M-3 16.5 h6" stroke="#9A6B00" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M-42 -28 C-42 -58 -22 -66 0 -66 C22 -66 42 -58 42 -28 C44 -6 22 2 0 2 C-22 2 -44 -6 -42 -28 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M-7 -64 q2 6 0 11 M0 -66 q1 7 0 13 M7 -64 q-2 6 0 11" fill="none" stroke="#D98E26" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M-28 -61 Q-13 -70 -9 -61 Q-15 -50 -31 -48 Q-36 -56 -28 -61 Z M28 -61 Q13 -70 9 -61 Q15 -50 31 -48 Q36 -56 28 -61 Z" fill="#E39B2B" stroke="#5A3510" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M-25 -57 Q-18 -59 -15 -55 M25 -57 Q18 -59 15 -55" fill="none" stroke="#B9731C" stroke-width="1.5" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-15" rx="18" ry="11" fill="#FFE7B0"/>
+    <ellipse cx="-27" cy="-19" rx="7" ry="4.5" fill="#F59AAE" opacity=".75"/><ellipse cx="27" cy="-19" rx="7" ry="4.5" fill="#F59AAE" opacity=".75"/>
+    <g fill="none" stroke="#5A3510" stroke-linecap="round">
+      <path d="M-23 -45 q5 -3.5 10 -1 M13 -46 q5 -3 10 1" stroke="#B9731C" stroke-width="2.2"/>
+      <path d="M-25 -32 q7 -8 14 0 M11 -32 q7 -8 14 0" stroke-width="3"/>
+      <path d="M-7 -11 q3.5 4 7 0 q3.5 4 7 0" stroke-width="2.2"/>
+      <path d="M-20 -14 L-36 -16 M-20 -10 L-35 -8 M20 -14 L36 -16 M20 -10 L35 -8" stroke-width="1.4"/>
     </g>
-    <ellipse cx="0" cy="-22" rx="32" ry="26" fill="none" stroke="#2B1D16" stroke-width="2.5"/>
-    <g fill="none" stroke="#2B1D16" stroke-width="2.5" stroke-linecap="round">
-      <path d="M-19 -22 q6 -7 12 0 M7 -22 q6 -7 12 0"/>
-      <path d="M-6 -8 q3 3 6 0 q3 3 6 0" stroke-width="2"/>
-      <path d="M-26 -13 L-41 -16 M-26 -8 L-41 -6 M26 -13 L41 -16 M26 -8 L41 -6" stroke-width="1.5"/>
-    </g>
-    <path d="M-3 -15 L3 -15 L0 -11 Z" fill="#E86A88"/>
-    <circle cx="-22" cy="-12" r="4.5" fill="#F4A7B9" opacity=".75"/><circle cx="22" cy="-12" r="4.5" fill="#F4A7B9" opacity=".75"/>
-    <rect x="-30" y="62" width="60" height="16" rx="3" fill="#F5C518" stroke="#9A6B00" stroke-width="1.5"/>
-    <text x="0" y="74" text-anchor="middle" font-size="11" font-weight="800" fill="#4A3200">Chủ toạ</text>
+    <path d="M-3.5 -20 Q0 -22 3.5 -20 Q2 -16 0 -16 Q-2 -16 -3.5 -20 Z" fill="#E86A88"/>
+    <rect x="-30" y="78" width="60" height="17" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
+    <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
   </g>`;
 
   const C = 190, SEAT_RING = 160, PULL = 140;

@@ -73,12 +73,9 @@ svg { flex: none; }
 .thread-label rect { fill: #fff; stroke-width: 2.5; }
 .thread-label text { font-size: 13px; font-weight: 800; text-anchor: middle; fill: var(--ink); font-variant-numeric: tabular-nums; }
 .thread-label.done { opacity: .5; }
-/* beckon: the arm leans toward the viewer while the hand folds at the wrist, back and forth without rest */
-.paw { transform-box: fill-box; transform-origin: 50% 100%; animation: lean .7s ease-in-out infinite alternate; }
-.paw .hand { transform-box: fill-box; transform-origin: 50% 100%; animation: fold .7s ease-in-out infinite alternate; }
-@keyframes lean { to { transform: scaleY(.9); } }
-@keyframes fold { to { transform: scaleY(.5); } }
-@media (prefers-reduced-motion: reduce) { .paw, .paw .hand { animation: none; } }
+/* the lucky cat is an animated GIF; under reduced motion show its first frame instead */
+.cat-still { display: none; }
+@media (prefers-reduced-motion: reduce) { .cat-anim { display: none; } .cat-still { display: inline; } }
 .invite { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
 
 /* ---------- headings & lists ---------- */

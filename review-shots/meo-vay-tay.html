@@ -1,16 +1,11 @@
-<!doctype html><meta charset="utf-8"><title>Mèo thần tài vẫy tay</title>
+<!doctype html><meta charset="utf-8"><title>Chọn kiểu vẫy tay</title>
 <style>
-body{margin:0;background:#FAD962;font:600 16px/1.4 system-ui,sans-serif;color:#2B1D16;display:flex;flex-direction:column;align-items:center;gap:8px;padding:24px}
-h2{margin:8px 0 0;font-size:17px}
-.row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-figure{margin:0;text-align:center} figcaption{font-size:13px}
-.frozen .paw,.frozen .paw .hand{animation-delay:var(--d)!important;animation-play-state:paused!important}
-.paw { transform-box: fill-box; transform-origin: 50% 100%; animation: lean .7s ease-in-out infinite alternate; }
-.paw .hand { transform-box: fill-box; transform-origin: 50% 100%; animation: fold .7s ease-in-out infinite alternate; }
-@keyframes lean { to { transform: scaleY(.9); } }
-@keyframes fold { to { transform: scaleY(.5); } }
+body{margin:0;background:#FAD962;font:500 15px/1.4 system-ui,sans-serif;color:#2B1D16;padding:24px;text-align:center}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+figure{margin:0;width:260px} figcaption b{font-size:17px}
+.a .hand{transform-box:fill-box;transform-origin:50% 100%;animation:a .36s cubic-bezier(.5,0,.5,1) infinite alternate} @keyframes a{to{transform:rotate(38deg) scaleY(.88)}}.b .paw{transform-box:fill-box;transform-origin:70% 100%;animation:b1 .36s cubic-bezier(.5,0,.5,1) infinite alternate} .b .hand{transform-box:fill-box;transform-origin:50% 100%;animation:b2 .36s cubic-bezier(.5,0,.5,1) infinite alternate} @keyframes b1{to{transform:rotate(16deg)}} @keyframes b2{to{transform:rotate(18deg)}}.c .paw{transform-box:fill-box;transform-origin:70% 100%;animation:c .36s cubic-bezier(.5,0,.5,1) infinite alternate} @keyframes c{from{transform:rotate(-10deg)}to{transform:rotate(10deg)}}
 </style>
-<h2>Đang chạy</h2><svg viewBox="110 92 160 190" width="320" height="380">
+<div class="row"><figure class="a"><svg viewBox="110 92 160 190" width="260" height="309">
   <g class="cat" transform="translate(190 176) scale(.92)">
     <ellipse cx="0" cy="74" rx="60" ry="9" fill="#000" opacity=".22"/>
     <path d="M-60 60 Q-62 49 -50 48 L50 48 Q62 49 60 60 Q62 71 50 72 L-50 72 Q-62 71 -60 60 Z" fill="#C81E2B" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
@@ -43,19 +38,20 @@ figure{margin:0;text-align:center} figcaption{font-size:13px}
     </g>
     <path d="M-3.5 -20 Q0 -22 3.5 -20 Q2 -16 0 -16 Q-2 -16 -3.5 -20 Z" fill="#E86A88"/>
     <g class="paw">
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 L-44 -32 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 M-44 -32 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -26 Q-55 -36 -44 -26 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -26 Q-55 -36 -44 -26 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
       <g class="hand">
         <ellipse cx="-55" cy="-40" rx="15" ry="15" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5"/>
-        <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
-        <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
-        <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+        <g class="pads">
+          <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
+          <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
+          <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+        </g>
       </g>
     </g>
     <rect x="-30" y="78" width="60" height="17" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
     <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
-  </g></svg>
-<h2>Từng tư thế</h2><div class="row"><figure><div class="frozen" style="--d:0s"><svg viewBox="110 92 160 190" width="240" height="285" >
+  </g></svg><figcaption><b>A · Gập cổ tay</b><br>Cánh tay đứng yên, bàn tay gập xuống ở cổ tay rồi dựng lên.</figcaption></figure><figure class="b"><svg viewBox="110 92 160 190" width="260" height="309">
   <g class="cat" transform="translate(190 176) scale(.92)">
     <ellipse cx="0" cy="74" rx="60" ry="9" fill="#000" opacity=".22"/>
     <path d="M-60 60 Q-62 49 -50 48 L50 48 Q62 49 60 60 Q62 71 50 72 L-50 72 Q-62 71 -60 60 Z" fill="#C81E2B" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
@@ -88,18 +84,20 @@ figure{margin:0;text-align:center} figcaption{font-size:13px}
     </g>
     <path d="M-3.5 -20 Q0 -22 3.5 -20 Q2 -16 0 -16 Q-2 -16 -3.5 -20 Z" fill="#E86A88"/>
     <g class="paw">
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 L-44 -32 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 M-44 -32 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -26 Q-55 -36 -44 -26 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -26 Q-55 -36 -44 -26 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
       <g class="hand">
         <ellipse cx="-55" cy="-40" rx="15" ry="15" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5"/>
-        <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
-        <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
-        <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+        <g class="pads">
+          <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
+          <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
+          <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+        </g>
       </g>
     </g>
     <rect x="-30" y="78" width="60" height="17" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
     <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
-  </g></svg></div><figcaption>Giơ lên</figcaption></figure><figure><div class="frozen" style="--d:-0.35s"><svg viewBox="110 92 160 190" width="240" height="285" >
+  </g></svg><figcaption><b>B · Vung cả cánh tay</b><br>Cả cánh tay vung vào phía mặt rồi ra, bàn tay gập theo một chút.</figcaption></figure><figure class="c"><svg viewBox="110 92 160 190" width="260" height="309">
   <g class="cat" transform="translate(190 176) scale(.92)">
     <ellipse cx="0" cy="74" rx="60" ry="9" fill="#000" opacity=".22"/>
     <path d="M-60 60 Q-62 49 -50 48 L50 48 Q62 49 60 60 Q62 71 50 72 L-50 72 Q-62 71 -60 60 Z" fill="#C81E2B" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
@@ -132,59 +130,17 @@ figure{margin:0;text-align:center} figcaption{font-size:13px}
     </g>
     <path d="M-3.5 -20 Q0 -22 3.5 -20 Q2 -16 0 -16 Q-2 -16 -3.5 -20 Z" fill="#E86A88"/>
     <g class="paw">
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 L-44 -32 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 M-44 -32 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -26 Q-55 -36 -44 -26 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
+      <path d="M-53 24 C-62 4 -68 -14 -66 -26 Q-55 -36 -44 -26 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
       <g class="hand">
         <ellipse cx="-55" cy="-40" rx="15" ry="15" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5"/>
-        <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
-        <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
-        <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+        <g class="pads">
+          <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
+          <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
+          <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
+        </g>
       </g>
     </g>
     <rect x="-30" y="78" width="60" height="17" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
     <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
-  </g></svg></div><figcaption>Đang gập</figcaption></figure><figure><div class="frozen" style="--d:-0.699s"><svg viewBox="110 92 160 190" width="240" height="285" >
-  <g class="cat" transform="translate(190 176) scale(.92)">
-    <ellipse cx="0" cy="74" rx="60" ry="9" fill="#000" opacity=".22"/>
-    <path d="M-60 60 Q-62 49 -50 48 L50 48 Q62 49 60 60 Q62 71 50 72 L-50 72 Q-62 71 -60 60 Z" fill="#C81E2B" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M-52 54 Q0 58 52 54 M-52 66 Q0 70 52 66" fill="none" stroke="#F5C518" stroke-width="3.5" stroke-linecap="round"/>
-    <circle cx="-60" cy="70" r="4.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.2"/><circle cx="60" cy="70" r="4.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.2"/>
-    <path d="M-50 52 C-62 18 -48 -8 0 -8 C48 -8 62 18 50 52 Q0 62 -50 52 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
-    <ellipse cx="0" cy="30" rx="30" ry="22" fill="#FFE7B0"/>
-    <path d="M-42 20 q6 3 10 0 M42 20 q-6 3 -10 0 M-45 32 q6 3 10 0 M45 32 q-6 3 -10 0" fill="none" stroke="#D98E26" stroke-width="2.2" stroke-linecap="round"/>
-    <ellipse cx="27" cy="25" rx="15" ry="20" fill="#F5C518" stroke="#9A6B00" stroke-width="2"/>
-    <ellipse cx="27" cy="25" rx="10.5" ry="15" fill="none" stroke="#9A6B00" stroke-width="1.2"/>
-    <text x="27" y="31" text-anchor="middle" font-size="16" font-weight="900" fill="#7A5200">₫</text>
-    <ellipse cx="31" cy="40" rx="11" ry="8.5" fill="#F2B53A" stroke="#5A3510" stroke-width="2.2"/>
-    <ellipse cx="-24" cy="53" rx="14" ry="8" fill="#FFE7B0" stroke="#5A3510" stroke-width="2.2"/>
-    <ellipse cx="24" cy="53" rx="14" ry="8" fill="#FFE7B0" stroke="#5A3510" stroke-width="2.2"/>
-    <path d="M-33 56 q4.5 -5 9 0 q4.5 -5 9 0 M15 56 q4.5 -5 9 0 q4.5 -5 9 0" fill="none" stroke="#5A3510" stroke-width="1.6" stroke-linecap="round"/>
-    <path d="M-36 -3 Q0 14 36 -3 L36 5 Q0 22 -36 5 Z" fill="#D7262E" stroke="#5A3510" stroke-width="1.8" stroke-linejoin="round"/>
-    <circle cx="0" cy="15" r="6.5" fill="#F5C518" stroke="#9A6B00" stroke-width="1.6"/>
-    <path d="M-3 16.5 h6" stroke="#9A6B00" stroke-width="1.4" stroke-linecap="round"/>
-    <path d="M-42 -28 C-42 -58 -22 -66 0 -66 C22 -66 42 -58 42 -28 C44 -6 22 2 0 2 C-22 2 -44 -6 -42 -28 Z" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M-7 -64 q2 6 0 11 M0 -66 q1 7 0 13 M7 -64 q-2 6 0 11" fill="none" stroke="#D98E26" stroke-width="2.4" stroke-linecap="round"/>
-    <path d="M-28 -61 Q-13 -70 -9 -61 Q-15 -50 -31 -48 Q-36 -56 -28 -61 Z M28 -61 Q13 -70 9 -61 Q15 -50 31 -48 Q36 -56 28 -61 Z" fill="#E39B2B" stroke="#5A3510" stroke-width="2.2" stroke-linejoin="round"/>
-    <path d="M-25 -57 Q-18 -59 -15 -55 M25 -57 Q18 -59 15 -55" fill="none" stroke="#B9731C" stroke-width="1.5" stroke-linecap="round"/>
-    <ellipse cx="0" cy="-15" rx="18" ry="11" fill="#FFE7B0"/>
-    <ellipse cx="-27" cy="-19" rx="7" ry="4.5" fill="#F59AAE" opacity=".75"/><ellipse cx="27" cy="-19" rx="7" ry="4.5" fill="#F59AAE" opacity=".75"/>
-    <g fill="none" stroke="#5A3510" stroke-linecap="round">
-      <path d="M-23 -45 q5 -3.5 10 -1 M13 -46 q5 -3 10 1" stroke="#B9731C" stroke-width="2.2"/>
-      <path d="M-25 -32 q7 -8 14 0 M11 -32 q7 -8 14 0" stroke-width="3"/>
-      <path d="M-7 -11 q3.5 4 7 0 q3.5 4 7 0" stroke-width="2.2"/>
-      <path d="M-20 -14 L-36 -16 M-20 -10 L-35 -8 M20 -14 L36 -16 M20 -10 L35 -8" stroke-width="1.4"/>
-    </g>
-    <path d="M-3.5 -20 Q0 -22 3.5 -20 Q2 -16 0 -16 Q-2 -16 -3.5 -20 Z" fill="#E86A88"/>
-    <g class="paw">
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 L-44 -32 C-44 -16 -38 -2 -30 12 Z" fill="#F2B53A"/>
-      <path d="M-53 24 C-62 4 -68 -14 -66 -32 M-44 -32 C-44 -16 -38 -2 -30 12" fill="none" stroke="#5A3510" stroke-width="2.5" stroke-linecap="round"/>
-      <g class="hand">
-        <ellipse cx="-55" cy="-40" rx="15" ry="15" fill="#F2B53A" stroke="#5A3510" stroke-width="2.5"/>
-        <ellipse cx="-55" cy="-38" rx="9.5" ry="9" fill="#FFE7B0"/>
-        <ellipse cx="-55" cy="-34.5" rx="4.6" ry="3.6" fill="#F59AAE"/>
-        <circle cx="-60.5" cy="-42.5" r="2" fill="#F59AAE"/><circle cx="-55" cy="-44.8" r="2" fill="#F59AAE"/><circle cx="-49.5" cy="-42.5" r="2" fill="#F59AAE"/>
-      </g>
-    </g>
-    <rect x="-30" y="78" width="60" height="17" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
-    <text x="0" y="90.5" text-anchor="middle" font-size="11.5" font-weight="800" fill="#3E2410">Chủ toạ</text>
-  </g></svg></div><figcaption>Dập xuống</figcaption></figure></div>
+  </g></svg><figcaption><b>C · Vẫy qua lại</b><br>Cả cánh tay lắc qua trái, qua phải như vẫy chào.</figcaption></figure></div>

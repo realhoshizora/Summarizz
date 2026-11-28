@@ -97,8 +97,8 @@
   /* ---------- the round table ---------- */
   const CAT = `
   <g class="cat">
-    <image class="cat-anim" href="cat.gif" x="106" y="96" width="168" height="150"/>
-    <image class="cat-still" href="cat-still.gif" x="106" y="96" width="168" height="150"/>
+    <image class="cat-anim" href="cat.gif" x="121" y="100" width="138" height="145"/>
+    <image class="cat-still" href="cat-still.png" x="121" y="100" width="138" height="145"/>
     <rect x="162" y="250" width="56" height="16" rx="4" fill="#C8935A" stroke="#7A4E22" stroke-width="1.5"/>
     <text x="190" y="261.6" text-anchor="middle" font-size="11" font-weight="800" fill="#3E2410">Chủ toạ</text>
   </g>`;

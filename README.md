@@ -10,7 +10,7 @@ public/
   style.css
   app.js        lưu trữ, link chia sẻ, vẽ bàn tròn, form
   split.js      toàn bộ phần tính tiền (không phụ thuộc giao diện)
-  favicon.svg
+  favicon.png
 test/
   split.test.js test cho phần tính tiền
 render.yaml     cấu hình deploy Render (Blueprint)

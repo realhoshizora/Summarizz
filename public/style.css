@@ -219,9 +219,16 @@ input::placeholder { color: var(--ink-faint); font-weight: 500; }
 
 .sessions { margin-bottom: 16px; }
 .sessions li + li { border-top: 1px solid var(--line); }
-.sessions button { width: 100%; text-align: left; background: none; border: 0; padding: 10px 8px; border-radius: 10px; cursor: pointer; }
-.sessions button:hover { background: var(--ground); }
-.sessions button[aria-current] { background: var(--chip); }
+.sessions li { display: flex; align-items: center; gap: 4px; border-radius: 10px; }
+.sessions li:hover { background: var(--ground); }
+.sessions li:has([aria-current]) { background: var(--chip); }
+.sessions [data-open] { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 10px 8px; border-radius: 10px; cursor: pointer; }
+/* delete X: shows on hover or keyboard focus; always shown where there is no hover (touch) */
+.sessions .del { display: grid; place-items: center; flex: none; width: 44px; height: 44px; margin-right: 4px; border: 0; background: none; border-radius: 50%; cursor: pointer; color: var(--neg); opacity: 0; }
+.sessions li:hover .del, .sessions .del:focus-visible { opacity: 1; }
+.sessions .del:hover { background: var(--control-hover); }
+.sessions .del svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+@media (hover: none) { .sessions .del { opacity: 1; } }
 .sessions b { display: block; font-weight: 700; }
 .sessions small { color: var(--ink-2); font-size: 13px; }
 

@@ -413,9 +413,10 @@
       return `<li class="member" style="--bg:${bg};--on:${ink}"><span>${esc(m.name)}</span>
         <button type="button" data-remove="${esc(m.id)}" aria-label="Bỏ ${esc(m.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button></li>`;
     }).join('');
+    const canDel = db.sessions.length > 1; // the last session stays, so there is always one to show
     $('#sessionList').innerHTML = db.sessions.map(x => `<li><button type="button" data-open="${esc(x.id)}" ${x.id === s.id ? 'aria-current="true"' : ''}>
-      <b>${esc(x.name)}</b><small>${vnDate(x.date)} · ${x.members.length} người · ${x.expenses.length} món</small></button></li>`).join('');
-    $('#delSession').hidden = db.sessions.length < 2;
+      <b>${esc(x.name)}</b><small>${vnDate(x.date)} · ${x.members.length} người · ${x.expenses.length} món</small></button>${canDel ? `
+      <button type="button" class="del" data-del="${esc(x.id)}" aria-label="Xoá buổi ${esc(x.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button>` : ''}</li>`).join('');
   }
   // The name/date fields belong to the session they were loaded from, not to whatever is
   // current when the sheet closes (switching or deleting changes `cur()` before close fires).
@@ -455,6 +456,16 @@
     save(); renderSessionSheet();
   });
   $('#sessionList').addEventListener('click', e => {
+    const d = e.target.closest('[data-del]');
+    if (d) {
+      const x = db.sessions.find(y => y.id === d.dataset.del);
+      if (!x || db.sessions.length < 2 || !confirm('Xoá buổi "' + x.name + '" và toàn bộ món của nó? Không hoàn tác được.')) return;
+      commitFields();
+      db.sessions = db.sessions.filter(y => y.id !== x.id);
+      if (!db.sessions.some(y => y.id === db.currentId)) db.currentId = db.sessions[0].id;
+      loadFields(cur()); save(); renderSessionSheet();
+      return;
+    }
     const b = e.target.closest('[data-open]'); if (!b) return;
     commitFields(); db.currentId = b.dataset.open; save(); sDlg.close(); showTab('table');
   });
@@ -464,12 +475,6 @@
     const s = newSession(cur().members.map(m => ({ ...m })));
     db.sessions.unshift(s); db.currentId = s.id; save();
     loadFields(s); renderSessionSheet(); sForm.name.select();
-  };
-  $('#delSession').onclick = () => {
-    const s = cur();
-    if (!confirm('Xoá buổi "' + s.name + '" và toàn bộ món của nó? Không hoàn tác được.')) return;
-    db.sessions = db.sessions.filter(x => x.id !== s.id); db.currentId = db.sessions[0].id;
-    save(); sDlg.close();
   };
   sForm.addEventListener('submit', e => { e.preventDefault(); commitFields(); save(); sDlg.close(); });
   sDlg.addEventListener('close', () => { commitFields(); save(); });
